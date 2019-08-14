@@ -10,7 +10,7 @@ if __name__ == '__main__':
 	# cv2.imwrite("../data/edges/小日向美穂_エッジ検出.png", edges)
 
 	# 選択点数
-	points = 2000
+	points = 3000
 	# 選択点数のリスト
 	choice_point = [[0 for i in range(len(edges[j]))] for j in range(len(edges))]
 

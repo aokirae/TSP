@@ -4,6 +4,7 @@
 #include <bits/stdc++.h>
 
 #include "GreedyAlgorithm.cpp"
+#include "2optAlgorithm.cpp"
 
 using namespace std;
 
@@ -65,9 +66,10 @@ double calcEuclidDistance(std::vector<int> a, std::vector<int> b){
 int main(int argc, char const *argv[]) {
 
 	// 方法
-	string method = "貪欲法";
+	//string method = "貪欲法";
+	string method = "2opt法";
 	// 点の個数
-	int points = 2000;
+	int points = 3000;
 	// 点の座標
 	std::vector<std::vector<int>> edges = input(points);
 
@@ -81,6 +83,9 @@ int main(int argc, char const *argv[]) {
 	std::vector<int> ret;
 	if (method == "貪欲法") {
 		ret = calcGreedyAlgorithm(matrix);
+	}
+	if (method == "2opt法") {
+		ret = calc2optAlgorithm(matrix);
 	}
 
 
