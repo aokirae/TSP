@@ -5,6 +5,7 @@
 
 #include "GreedyAlgorithm.cpp"
 #include "2optAlgorithm.cpp"
+#include "SimulatedAnnealing.cpp"
 
 using namespace std;
 
@@ -66,8 +67,10 @@ double calcEuclidDistance(std::vector<int> a, std::vector<int> b){
 int main(int argc, char const *argv[]) {
 
 	// 方法
-	//string method = "貪欲法";
-	string method = "2opt法";
+	// string method = "貪欲法";
+	// string method = "2opt法";
+	string method = "焼きなまし法";
+
 	// 点の個数
 	int points = 3000;
 	// 点の座標
@@ -86,6 +89,9 @@ int main(int argc, char const *argv[]) {
 	}
 	if (method == "2opt法") {
 		ret = calc2optAlgorithm(matrix);
+	}
+	if (method == "焼きなまし法") {
+		ret = calcSimulatedAnnealing(matrix);
 	}
 
 

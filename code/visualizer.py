@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
 	# 255(白)の点の座標のリスト
 	list_address = []
-	file_name = "../data/solve/小日向美穂_貪欲法_3000点"
+	file_name = "../data/solve/小日向美穂_焼きなまし法_3000点"
 	with open(file_name + ".csv") as f:
 		for line in f:
 			list_tmp = line.split(",")
