@@ -10,7 +10,7 @@ if __name__ == '__main__':
 	# cv2.imwrite("../data/edges/小日向美穂_エッジ検出.png", edges)
 
 	# 選択点数
-	points = 4000
+	points = 2000
 	# 選択点数のリスト
 	choice_point = [[0 for i in range(len(edges[j]))] for j in range(len(edges))]
 
@@ -20,7 +20,17 @@ if __name__ == '__main__':
 		for j in range(len(edges[i])):
 			if edges[i,j] == 255:
 				list_address.append([i,j])
+	# pointsの数だけ点を選択
 	list_choice_address = random.sample(list_address, points)
+	list_choice_address.sort()
 	for i in list_choice_address:
 		choice_point[i[0]][i[1]] = 255
+	# 画像出力
 	cv2.imwrite("../data/edges/小日向美穂_エッジ選択_"+str(points)+"点.png", np.array(choice_point))
+	# csv出力
+	with open("../data/edges/小日向美穂_エッジ選択_"+str(points)+"点.csv", mode="w") as f:
+		for i in list_choice_address:
+			f.write(str(i[0]))
+			f.write(",")
+			f.write(str(i[1]))
+			f.write("\n")
