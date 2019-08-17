@@ -6,6 +6,7 @@
 #include "GreedyAlgorithm.cpp"
 #include "2optAlgorithm.cpp"
 #include "SimulatedAnnealing.cpp"
+#include "AntColonyOptimization.cpp"
 
 using namespace std;
 
@@ -69,7 +70,8 @@ int main(int argc, char const *argv[]) {
 	// 方法
 	// string method = "貪欲法";
 	// string method = "2opt法";
-	string method = "焼きなまし法";
+	// string method = "焼きなまし法";
+	string method = "蟻コロニー最適化";
 
 	// 点の個数
 	int points = 3000;
@@ -83,6 +85,7 @@ int main(int argc, char const *argv[]) {
 		}
 	}
 
+	std::cout << "Main.cpp : begin calc" << '\n';
 	std::vector<int> ret;
 	if (method == "貪欲法") {
 		ret = calcGreedyAlgorithm(matrix);
@@ -93,6 +96,10 @@ int main(int argc, char const *argv[]) {
 	if (method == "焼きなまし法") {
 		ret = calcSimulatedAnnealing(matrix);
 	}
+	if (method == "蟻コロニー最適化") {
+		ret = clacAntColonyOptimization(matrix);
+	}
+	std::cout << "Main.cpp : end calc" << '\n';
 
 
 	output(method, points, sortAnswer(edges, ret));
