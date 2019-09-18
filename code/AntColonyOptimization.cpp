@@ -62,7 +62,7 @@ public:
 			//random_device rnd;
 			double choice = (double)rand() / RAND_MAX;
 			// std::cout << "choice : " << choice << '\n';
-			// std::cout << "sum_prob : " << accumulate(prob.begin(),prob.end(),0.0) << '\n';
+			std::cout << "prob size : " << prob.size() << '\n';
 			for (size_t ip = 0; ip < prob.size(); ip++) {
 				choice -= prob[ip];
 				if (choice < 0.0) {
@@ -203,7 +203,7 @@ std::vector<int> clacAntColonyOptimization(std::vector<std::vector<double>> matr
 			Agent k = Agent(towns,0,matrix,pheromone);
 			std::cout << "walking………" << '\n';
 			k.agentWalk();
-			// std::cout << "end walking" << '\n';
+			std::cout << "end walking" << '\n';
 			double length = k.getLength();
 			pheros.push_back(k.getDeltaPheromon());
 

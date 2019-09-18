@@ -7,6 +7,7 @@
 #include "2optAlgorithm.cpp"
 #include "SimulatedAnnealing.cpp"
 #include "AntColonyOptimization.cpp"
+#include "GeneticAlgorithm.cpp"
 
 using namespace std;
 
@@ -71,7 +72,8 @@ int main(int argc, char const *argv[]) {
 	// string method = "貪欲法";
 	// string method = "2opt法";
 	// string method = "焼きなまし法";
-	string method = "蟻コロニー最適化";
+	// string method = "蟻コロニー最適化";
+	string method = "遺伝的アルゴリズム";
 
 	// 点の個数
 	int points = 3000;
@@ -98,6 +100,9 @@ int main(int argc, char const *argv[]) {
 	}
 	if (method == "蟻コロニー最適化") {
 		ret = clacAntColonyOptimization(matrix);
+	}
+	if (method == "遺伝的アルゴリズム") {
+		ret = calcGeneticAlgorithm(matrix);
 	}
 	std::cout << "Main.cpp : end calc" << '\n';
 
